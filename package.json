@@ -1,0 +1,33 @@
+{
+  "name": "firstvue",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@kangc/v-md-editor": "^2.3.15",
+    "axios": "^1.4.0",
+    "babel-plugin-prismjs": "^2.1.0",
+    "element-plus": "^2.3.4",
+    "github-markdown-css": "^5.2.0",
+    "markdown-it": "^13.0.1",
+    "querystring": "^0.2.1",
+    "swiper": "^9.2.4",
+    "vite-plugin-prismjs": "^0.0.8",
+    "vite-plugin-require": "^1.1.10",
+    "vite-plugin-require-transform": "^1.0.12",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "sass": "^1.62.1",
+    "unplugin-auto-import": "^0.15.3",
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "^4.1.4"
+  }
+}
