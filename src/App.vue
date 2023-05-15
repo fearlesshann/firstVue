@@ -15,6 +15,12 @@
       <router-view></router-view>
       <el-backtop style="box-shadow: var(--el-box-shadow-dark); width: 60px; height: 60px;" :right="380" :bottom="200" />
     </el-main>
+    <el-footer style="text-align: center;">
+      <div class="dashed" />
+      <br/>
+      © 2023-2024 YeHan.cc | 
+      <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2023011372号-1</a>
+    </el-footer>
   </el-container>
 </template>
 
