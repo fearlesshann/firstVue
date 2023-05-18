@@ -1,5 +1,5 @@
 <template>
-    <el-container>
+    <el-container v-loading.fullscreen.lock="loading">
         <el-col :span="6"></el-col>
         <el-col :span="12">
             <div class="mblog">
@@ -28,7 +28,8 @@ export default {
                 id: '',
                 title: '',
                 content: ''
-            }
+            },
+            loading: true
         }
     },
     methods: {
@@ -49,6 +50,7 @@ export default {
             var result = md.render(res.data.content);
             this.blog = res.data
             this.blog.content = result
+            this.loading = false;
         })
     },
 }

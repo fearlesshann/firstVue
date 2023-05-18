@@ -1,9 +1,10 @@
 <template>
-  <el-row style="height: 10px;"/>
-  <el-row v-for="(o, index) in blogs" :key="index">
+  <el-row style="height: 10px;" />
+  <el-row v-loading.fullscreen.lock="loading" v-for="(o, index) in blogs" :key="index">
     <el-col :span="6"></el-col>
     <el-col :span="12">
-      <el-card style="box-shadow: var(--el-box-shadow-dark);" shadow="hover" :body-style="{ padding: '60px' }" @click="cardClicked(o.id)">
+      <el-card style="box-shadow: var(--el-box-shadow-dark);" shadow="hover" :body-style="{ padding: '60px' }"
+        @click="cardClicked(o.id)">
         {{ o.title }}
       </el-card>
     </el-col>
@@ -14,7 +15,8 @@
 export default {
   data() {
     return {
-      blogs: {}
+      blogs: {},
+      loading: true
     }
   },
   methods: {
@@ -28,6 +30,8 @@ export default {
       url: "getall"
     }).then(res => {
       this.blogs = res.data
+      this.loading = false;
+      
     })
   },
 }
