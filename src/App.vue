@@ -2,20 +2,28 @@
   <el-container>
     <el-header>
       <el-affix>
-        <el-menu background-color="#121212" :default-active="activeIndex" :ellipsis="false" router class="el-menu"
-          mode="horizontal">
-          <el-col :span="2"></el-col>
-          <el-image style="width: 160px; height: 50px" :src="'logo1.png'" :fit="'contain'" />
-          <el-col :span="15"></el-col>
-          <el-menu-item index="/">首页</el-menu-item>
-          <el-menu-item index="/createBlog">添加</el-menu-item>
-        </el-menu>
+        <div class="navbar-wrapper">
+          <div class="header-container">
+            <div class="logo-container">
+              <img src="/logo1.png" style="width: 107; height: 50px">
+            </div>
+            <div class="content">
+              <el-menu background-color="#121212" :default-active="activeIndex" :ellipsis="false" router class="el-menu"
+                mode="horizontal">
+                <el-menu-item index="/">首页</el-menu-item>
+                <el-menu-item index="/createBlog">添加</el-menu-item>
+              </el-menu>
+            </div>
+          </div>
+          <el-divider style="top: -25px;" />
+        </div>
       </el-affix>
     </el-header>
     <el-main>
       <router-view></router-view>
-      <el-backtop style="box-shadow: var(--el-box-shadow-dark); width: 60px; height: 60px;" :right="380" :bottom="200" />
+      <el-backtop class="backtop" style="box-shadow: var(--el-box-shadow-dark);" />
     </el-main>
+    <el-divider />
     <el-footer style="text-align: center;">
       <p style="color:#939393;">© 2023-2024 YeHan.cc</p>
       <a target="_blank" href="https://beian.miit.gov.cn/"
@@ -32,7 +40,6 @@
           </p>
         </a>
       </div>
-
     </el-footer>
   </el-container>
 </template>
@@ -43,4 +50,38 @@ import { ref } from 'vue'
 var activeIndex = ref('/')
 </script>
 
-<style scoped></style>
+<style scoped>
+.navbar-wrapper {
+  position: relative;
+  padding: 0 12px 0 24px;
+  background-color: #121212;
+  top: 0;
+  height: 58px;
+}
+
+.navbar-wrapper .header-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+}
+
+.navbar-wrapper .header-container .content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+}
+
+@media screen and (min-width: 900px) {
+  .backtop {
+    width: 60px;
+    height: 60px;
+  }
+}
+</style>

@@ -8,23 +8,17 @@
             </span>
         </template>
     </el-dialog>
-    <!-- <h1 v-if="id === '0'" style="text-align: center; color: #b4b4b4;">添加新的Blog</h1>
-    <h1 v-if="id != '0'" style="text-align: center; color: #b4b4b4;">修改Blog</h1> -->
-    <el-row style="height: 20px;" />
+    <el-row></el-row>
     <el-row>
-        <el-col :span="6"></el-col>
-        <el-col :span="12">
+        <el-col class="input">
             <el-input style="box-shadow: var(--el-box-shadow-dark);" maxlength="50" show-word-limit size="large"
                 v-model="title" placeholder="请输入Blog标题" />
         </el-col>
-        <el-col :span="6"></el-col>
     </el-row>
     <el-row>
-        <el-col :span="6"></el-col>
-        <el-col style="box-shadow: var(--el-box-shadow-dark);" :span="12">
+        <el-col class="editor" style="box-shadow: var(--el-box-shadow-dark);">
             <v-md-editor v-model="content" height="400px"></v-md-editor>
         </el-col>
-        <el-col :span="6"></el-col>
     </el-row>
     <div class="button">
         <el-button style="box-shadow: var(--el-box-shadow-light);" size="large" plain @click="postBlog">确 定</el-button>
@@ -141,6 +135,17 @@ export default {
 <style scoped>
 .button {
     text-align: center;
+}
+@media screen and (min-width: 900px) {
+    .input {
+        max-width: 50%;
+        margin: auto;
+        top: 50px;
+    }
+    .editor {
+        max-width: 50%;
+        margin: auto;
+    }
 }
 </style>
 

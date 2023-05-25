@@ -1,16 +1,11 @@
 <template>
     <el-container v-loading.fullscreen.lock="loading">
-        <el-col :span="6"></el-col>
-        <el-col :span="12">
-            <div class="mblog">
-                <h1 style="font-size: 35px; color: rgb(240, 240, 240);" align="center">{{ blog.title }}</h1>
-                <div style="box-shadow: var(--el-box-shadow-dark);" class="markdown-body" v-html="blog.content"></div>
-            </div>
-        </el-col>
-        <el-col :span="6">
-            <el-button style="box-shadow: var(--el-box-shadow-light);" size="large" plain
-                @click="cardClicked(this.id)">修改</el-button>
-        </el-col>
+        <div class="mblog">
+            <h1 style="font-size: 35px; color: rgb(240, 240, 240);text-align: center;">{{ blog.title }}</h1>
+            <!-- <el-button style="box-shadow: var(--el-box-shadow-light);" size="large" plain
+                @click="cardClicked(this.id)">修改</el-button> -->
+            <div style="box-shadow: var(--el-box-shadow-dark);" class="markdown-body" v-html="blog.content"></div>
+        </div>
     </el-container>
 </template>
 <script>
@@ -59,5 +54,12 @@ export default {
 <style scoped>
 .mblog {
     padding: 20px, 15px;
+}
+
+@media screen and (min-width: 900px) {
+    .mblog {
+        max-width: 50%;
+        margin: auto;
+    }
 }
 </style>
