@@ -1,24 +1,22 @@
 <template>
   <el-container>
-    <el-header>
-      <el-affix>
-        <div class="navbar-wrapper">
-          <div class="header-container">
-            <div class="logo-container">
-              <img src="/logo1.png" style="width: 107; height: 50px">
-            </div>
-            <div class="content">
-              <el-menu background-color="#121212" :default-active="activeIndex" :ellipsis="false" router class="el-menu"
-                mode="horizontal">
-                <el-menu-item index="/">首页</el-menu-item>
-                <el-menu-item index="/createBlog">添加</el-menu-item>
-              </el-menu>
-            </div>
+    <el-affix>
+      <div class="navbar-wrapper">
+        <div class="header-container">
+          <div class="logo-container">
+            <img src="/logo1.png" style="width: 107; height: 50px">
           </div>
-          <el-divider style="top: -25px;" />
+          <div class="content">
+            <el-menu background-color="#121212" :default-active="activeIndex" :ellipsis="false" router class="el-menu"
+              mode="horizontal">
+              <el-menu-item index="/">首页</el-menu-item>
+              <el-menu-item index="/createBlog">添加</el-menu-item>
+            </el-menu>
+          </div>
         </div>
-      </el-affix>
-    </el-header>
+        <el-divider style="top: -25px;" />
+      </div>
+    </el-affix>
     <el-main>
       <router-view></router-view>
       <el-backtop class="backtop" style="box-shadow: var(--el-box-shadow-dark);" />
